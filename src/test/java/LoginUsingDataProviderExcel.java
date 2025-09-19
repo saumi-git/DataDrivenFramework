@@ -20,7 +20,7 @@ public class LoginUsingDataProviderExcel {
     WebDriver driver;
 
     @BeforeMethod
-    public void setUp() throws InterruptedException {
+    public void setUp(){
         driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
@@ -38,7 +38,7 @@ public class LoginUsingDataProviderExcel {
         int totalRows=sheet1.getLastRowNum();
         int totalColumns=sheet1.getRow(0).getLastCellNum();
         System.out.println("Total row count : "+totalRows);
-        System.out.println("Total coulmn count : "+totalColumns);
+        System.out.println("Total column count : "+totalColumns);
 
         String[][] testData=new String[totalRows][totalColumns];
         for (int r=1;r<=totalRows;r++){
@@ -61,11 +61,6 @@ public class LoginUsingDataProviderExcel {
 
         driver.findElement(By.xpath("//button[@type='submit']")).click();
         Thread.sleep(3000);
-
-     //   WebElement dashboardText=driver.findElement(By.linkText("Dashboard"));
-//        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(3));
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Dashboard")));
-
 
         boolean urlVerification=driver.getCurrentUrl().contains("dashboard");
         if (expValidation.equals("valid")){
