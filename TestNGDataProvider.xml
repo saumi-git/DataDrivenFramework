@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Login Suite Using Data Provider">
+<!--    <listners>-->
+<!--        <listner class-name="com.aventstack.extentreports.testng.listner.ExtentITestListenerClassAdapter"/>-->
+<!--    </listners>-->
+
+    <test name="DataProviderTests">
+        <classes>
+            <class name="LoginUsingDataProviderExcel">
+
+            </class>
+        </classes>
+
+    </test>
+
+</suite>
